@@ -1,0 +1,25 @@
+{
+  "name": "cypress-cucumber-js",
+  "version": "1.0.0",
+  "description": "Cypress Cucumber Framework",
+  "main": "index.js",
+  "scripts": {
+    "test:open": "cypress open",
+    "test:run": "cypress run"
+  },
+  "author": "Kranthi",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^4.9.0",
+    "cypress-cucumber-preprocessor": "^2.5.0",
+    "cypress-plugin-retries": "^1.5.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "cucumberJson": {
+        "generate": true,
+        "outputFolder": "./cypress-reports",
+        "filePrefix": "",
+        "fileSuffix": "-cucumber"
+    }
+  }
+}
