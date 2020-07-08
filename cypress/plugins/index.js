@@ -1,7 +1,6 @@
-/// <reference types="cypress" />
 const cucumber = require("cypress-cucumber-preprocessor").default;
 
-const BASE_URL = process.env.BASE_URL ? process.env.BASE_URL : "";
+const BASE_URL = process.env.BASE_URL ? process.env.BASE_URL : "https://rahulshettyacademy.com/angularpractice";
 
 
 module.exports = (on, config) => {
