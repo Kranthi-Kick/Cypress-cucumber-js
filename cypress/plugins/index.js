@@ -11,7 +11,6 @@ module.exports = (on, config) => {
             URL: BASE_URL
         },
         baseUrl: BASE_URL,
-        fixturesFolder: false,
         defaultCommandTimeout: 30000
     });
 };

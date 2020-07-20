@@ -1,7 +1,14 @@
-import { When, Given, Then, And } from "cypress-cucumber-preprocessor/steps";
+import { Given, Then, And } from "cypress-cucumber-preprocessor/steps";
 
 const baseAPI = "http://dummy.restapiexample.com/api/v1";
 let apiResponse;
+let fixtureData;
+before(() => {
+    cy.fixture('api.json').then((data)=>{
+        fixtureData = data;
+    })
+  })
+
 function getAPI (callOF){
     cy.request(`${baseAPI}/${callOF}`).then((response) => {
         apiResponse = response ;
@@ -15,13 +22,13 @@ function responseLength (length){
     cy.log(apiResponse.body.data)
     console.log(apiResponse.body.data)
 }
+function postAPI (){ 
+    cy.request('POST', `${baseAPI}/create`, fixtureData)
+    .then((res)=>{
+        apiResponse = res ;
+    })
+}
 Given ("I make a get {string} api call", (callOF) => getAPI(callOF));
 Then ("the response status code should be {int}", (value) => statuscode (value));
 And ("it should have response data of length {int}", (length) => responseLength (length));
-Given ("I make a post api call",()=>{
-    const item = {"name":"1test","salary":"123","age":"23","name":"1tst","salary":"123","age":"29"}
-        cy.request('POST', `${baseAPI}/create`, item)
-       .then((res)=>{
-            apiResponse = res ;
-       })
-})
+Given ("I make a post api call",()=> postAPI())

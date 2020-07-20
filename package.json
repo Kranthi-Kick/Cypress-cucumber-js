@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test:open": "cypress open",
-    "test:run": "cypress run"
+    "test:run": "cypress run",
+    "test:reports": "node merge-cypress-reports.js && node generate-cypress-report.js"
   },
   "author": "Kranthi",
   "license": "ISC",
   "dependencies": {
     "cypress": "^4.9.0",
     "cypress-cucumber-preprocessor": "^2.5.0",
+    "cucumber-html-reporter": "^5.0.2",
     "cypress-plugin-retries": "^1.5.2"
   },
   "cypress-cucumber-preprocessor": {
