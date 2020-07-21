@@ -11,9 +11,9 @@
   "author": "Kranthi",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^4.9.0",
-    "cypress-cucumber-preprocessor": "^2.5.0",
     "cucumber-html-reporter": "^5.0.2",
+    "cypress": "^4.10.0",
+    "cypress-cucumber-preprocessor": "^2.5.4",
     "cypress-plugin-retries": "^1.5.2"
   },
   "cypress-cucumber-preprocessor": {

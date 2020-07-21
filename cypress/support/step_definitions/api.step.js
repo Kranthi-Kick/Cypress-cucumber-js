@@ -1,6 +1,6 @@
 import { Given, Then, And } from "cypress-cucumber-preprocessor/steps";
 
-const baseAPI = "http://dummy.restapiexample.com/api/v1";
+const baseAPI = "https://reqres.in/api/users";
 let apiResponse;
 let fixtureData;
 before(() => {
@@ -10,7 +10,7 @@ before(() => {
   })
 
 function getAPI (callOF){
-    cy.request(`${baseAPI}/${callOF}`).then((response) => {
+    cy.request(baseAPI).then((response) => {
         apiResponse = response ;
     })
 }
